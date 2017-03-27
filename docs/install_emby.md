@@ -12,7 +12,7 @@ The pre-requisite is Ubuntu 14.04.5 LTS with an ssh server installed.
 
 The server does not enforce SSL as this is outside the scope of this context.
 Digital ocean has written an excellent article on 
-[how to secure NGINX with let's encrypt on ubuntu 14-04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04). There is an excelent boyler template for [nginx.config here](https://gist.github.com/plentz/6737338).
+[how to secure NGINX with let's encrypt on ubuntu 14-04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04). There is an excelent boiler template for [nginx.config here](https://gist.github.com/plentz/6737338).
 
 Our server has the public IP address 130.226.136.242
 
