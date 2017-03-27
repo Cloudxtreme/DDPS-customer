@@ -19,20 +19,6 @@ html_header = <link rel=\"stylesheet\" href=\"assets/CSS/default.min.css\"> <scr
 html_header = <link rel=\"stylesheet\" href=\"assets/CSS/grayscale.css\"> <script src=\"assets/CSS/highlight.min.js\"></script> <script>hljs.initHighlightingOnLoad();</script>
 html_header = <link rel=\"stylesheet\" href=\"assets/CSS/googlecode.css\"> <script src=\"assets/CSS/highlight.min.js\"></script> <script>hljs.initHighlightingOnLoad();</script>
 
-
-DPS.pdf: DPS.html DPS.md DPS.mmd Makefile
-	wkhtmltopdf	--margin-top 15 --margin-left 15 --margin-right 15								\
-				--margin-bottom 20 																\
-				--print-media-type \
-				toc --toc-header-text "Table of Content"										\
-				$< --enable-internal-links --footer-font-name Ariel								\
-				--footer-font-size 7 --footer-spacing 2											\
-				--footer-line		\
-				--footer-left "[isodate] [time] $(version)" 				\
-				--footer-right 'Page [page] of [topage]' $(addsuffix .pdf, $(basename $<))
-				pdfunite coverpage.pdf $(addsuffix .pdf, $(basename $<)) $(addsuffix .pdf, $(basename $<))-with-coverpage.pdf
-				/bin/mv $(addsuffix .pdf, $(basename $<))-with-coverpage.pdf DPS.pdf
-
 %.mmd:
 	# heredoc doesn't work in Makefile
 	echo "Title:  Status"		>	$@
@@ -55,14 +41,15 @@ DPS.pdf: DPS.html DPS.md DPS.mmd Makefile
 %.pdf: %.html #%.md %.mmd
 	wkhtmltopdf	--margin-top 15 --margin-left 15 --margin-right 15								\
 				--margin-bottom 20 																\
-				--print-media-type \
+				--print-media-type 																\
 				$< --enable-internal-links --footer-font-name Ariel								\
 				--footer-font-size 8 --footer-spacing 2											\
-				--footer-line		\
-				--footer-left "[isodate] [time] $(version)" 				\
+				--footer-line																	\
+				--footer-left "[isodate] [time] $(version)" 									\
 				--footer-right 'Page [page] of [topage]' $(addsuffix .pdf, $(basename $<))
-				echo pdfunite coverpage.pdf $(addsuffix .pdf, $(basename $<)) $(addsuffix .pdf, $(basename $<))-with-coverpage.pdf
-
+				if [ -f coverpage.pdf ]; then pdfunite coverpage.pdf $(addsuffix .pdf, $(basename $<)) $(basename $<)-with-coverpage.pdf;	\
+				/bin/mv $(basename $<)-with-coverpage.pdf $(addsuffix .pdf, $(basename $<));	\
+				fi
 
 .SILENT:
 
