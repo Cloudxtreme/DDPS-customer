@@ -8,7 +8,7 @@ in markdown and the file structure is based on [text bundle](textbundle.org)
 skeleton except for the _json_ file - and the ``assets`` directory has been
 populated with individual directories for images and CSS stylesheets.
 
-  - Link to the [installation procedure](src/install_emby.md)
+  - Link to the [installation procedure](docs/install_emby.md)
 
 There is a generic Makefile for creating _html_ and _pdf_ from _Markdown_ files.
 

@@ -14,6 +14,8 @@ The server does not enforce SSL as this is outside the scope of this context.
 Digital ocean has written an excellent article on 
 [how to secure NGINX with let's encrypt on ubuntu 14-04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04).
 
+Our server has the public IP address 130.226.136.242
+
 ## How to Install the media server emby on top of NGINX
 
 This is a documented procedure for the installation of **emby** a media streaming
