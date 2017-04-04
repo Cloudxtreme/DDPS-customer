@@ -218,11 +218,13 @@ The configuration is done through the Web-UI, but requires data to be
 added in advance.
 
 
-### Data - lots of clocks but no cats
+### Add movie data
 
-mkdir -p /home/media/Movies
+On the customer example server we have lots of clocks but no cats.
 
-Upload relevant information from /lan/ssi/shared/docs/emby-test-data
+	mkdir -p /home/media/Movies
+
+Upload the relevant information from ``/lan/ssi/shared/docs/emby-test-data``.
 
 ### Configuration
 
