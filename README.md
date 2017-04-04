@@ -29,5 +29,5 @@ specific language governing permissions and limitations under the License.
 The following other licences apply to the emby media server and NGINX:
 
   - [emby license](https://emby.media/license.html)
-  - [nginx license](nginx.org/LICENSE)
+  - [nginx license](https://nginx.org/LICENSE)
 
